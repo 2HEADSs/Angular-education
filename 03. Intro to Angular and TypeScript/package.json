@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "run": "tsc 03.People/index.ts"
+    "start": " tsc 03.People\\employee.ts"
   },
   "keywords": [],
   "author": "",
