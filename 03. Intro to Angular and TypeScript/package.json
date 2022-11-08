@@ -1,4 +1,14 @@
 {
+  "name": "03.-intro-to-angular-and-typescript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "run": "tsc 03.People/index.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
     "typescript": "^4.8.4"
   }
