@@ -2,11 +2,16 @@ export abstract class Employee {
     public salary: number;
     tasks: string[] = [];
 
+    private currentWorkIndex = 0;
+
+
     constructor(public name: string, public age: number) {
     }
 
     work(): void {
 
+        console.log(this.tasks[this.currentWorkIndex]);
+        
     }
 
     collectSalary(): void {
