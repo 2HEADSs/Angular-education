@@ -2,4 +2,10 @@ h2 {
     color: red;
 }
 
+.game-price {
+    color: green;
+}
 
+li {
+    display: inline-block;
+}

@@ -6,8 +6,20 @@
     <li *ngFor="let game of games">
         Game: {{game.title}}
 
-        <span *ngIf="game.price < 50">
+        <span [class.game-price]="shouldPriceBeGreen" *ngIf="game.price > 0">
             Price: {{game.price}}
+        </span>
+
+        <span  [style.font-size.px]="'25'" [style.color]="'red'">
+            Raiting: {{game.raiting}}
+        </span>
+
+        <span>
+            <img [src]="game.img" alt="" width="300px">
         </span>
     </li>
 </ul>
+
+<button (click)="handleExpandContentClick()">
+    {{shouldPriceBeGreen? 'Make Price Dark':  'Make Price Green'}}
+</button>
