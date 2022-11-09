@@ -1,12 +1,7 @@
 import { Component } from "@angular/core";
+import { Game } from "./game-item/game-item.component";
 
-interface Game {
-    title?: string,
-    price: number,
-    img: string,
-    raiting: number
-    //price? - can exist or not
-}
+
 
 @Component({
     selector: 'su-game',
@@ -16,7 +11,10 @@ interface Game {
 
 export class GameComponent {
     shouldPriceBeGreen: boolean;
+    shouldShowGameItemComponent: boolean;
     // shouldShowAdditionalContent?: boolean = false;
+
+    searchText: string = 'Game 1'
     games: Game[] = [
         {
             title: 'Minecraft',
@@ -40,7 +38,16 @@ export class GameComponent {
     handleExpandContentClick(gamesContainer: HTMLElement): void {
         this.shouldPriceBeGreen = this.shouldPriceBeGreen ? false : true;
         console.log(gamesContainer.children);
-        
+
         // this.shouldPriceBeGreen = !this.shouldPriceBeGreen
+    }
+
+    handleSearchChange(event: Event) {
+        console.log(event);
+
+    }
+
+    handleCreateOrDestroyGameItem(): void {
+        this.shouldShowGameItemComponent = !this.shouldShowGameItemComponent
     }
 }

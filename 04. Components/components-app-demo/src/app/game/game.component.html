@@ -2,9 +2,17 @@
     Game html works
 </h2>
 
+<input type="text" placeholder="Search for a game" [(ngModel)]="searchText">
+Searched value: {{searchText}}
+
 <ul #gamesContainer>
     <li *ngFor="let game of games">
-        Game: {{game.title}}
+        <su-game-item [sourceGame]="game">
+
+        </su-game-item>
+        <!-- <div>
+            Game: {{game.title}}
+        </div>
         <div>
             Game Title Length: {{game.title?.length}}
         </div>
@@ -17,11 +25,9 @@
             Raiting: {{game.raiting}}
         </span>
 
-
-            <div>
-                <img [src]="game.img" alt="" width="300px">
-            </div>
-
+        <div>
+            <img [src]="game.img" alt="" width="300px">
+        </div> -->
     </li>
 </ul>
 
@@ -29,6 +35,10 @@
     Total game: {{gamesContainer.children.length}}
 </div>
 
+
+<button (click)="handleCreateOrDestroyGameItem()">
+    {{shouldShowGameItemComponent? 'Destroy Game Item Component': 'Create Game Item Component'}}
+</button>
 
 <button (click)="handleExpandContentClick(gamesContainer)">
     {{shouldPriceBeGreen? 'Make Price Dark': 'Make Price Green'}}
