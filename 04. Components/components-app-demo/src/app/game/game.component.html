@@ -2,24 +2,34 @@
     Game html works
 </h2>
 
-<ul>
+<ul #gamesContainer>
     <li *ngFor="let game of games">
         Game: {{game.title}}
+        <div>
+            Game Title Length: {{game.title?.length}}
+        </div>
 
         <span [class.game-price]="shouldPriceBeGreen" *ngIf="game.price > 0">
             Price: {{game.price}}
         </span>
 
-        <span  [style.font-size.px]="'25'" [style.color]="'red'">
+        <span [style.font-size.px]="'25'" [style.color]="'red'">
             Raiting: {{game.raiting}}
         </span>
 
-        <span>
-            <img [src]="game.img" alt="" width="300px">
-        </span>
+
+            <div>
+                <img [src]="game.img" alt="" width="300px">
+            </div>
+
     </li>
 </ul>
 
-<button (click)="handleExpandContentClick()">
-    {{shouldPriceBeGreen? 'Make Price Dark':  'Make Price Green'}}
+<div>
+    Total game: {{gamesContainer.children.length}}
+</div>
+
+
+<button (click)="handleExpandContentClick(gamesContainer)">
+    {{shouldPriceBeGreen? 'Make Price Dark': 'Make Price Green'}}
 </button>

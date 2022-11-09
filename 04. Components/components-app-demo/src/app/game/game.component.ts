@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
 
 interface Game {
-    title: string,
+    title?: string,
     price: number,
     img: string,
     raiting: number
@@ -37,7 +37,10 @@ export class GameComponent {
         },
     ]
 
-    handleExpandContentClick(): void {
-        this.shouldPriceBeGreen = this.shouldPriceBeGreen ? false : true
+    handleExpandContentClick(gamesContainer: HTMLElement): void {
+        this.shouldPriceBeGreen = this.shouldPriceBeGreen ? false : true;
+        console.log(gamesContainer.children);
+        
+        // this.shouldPriceBeGreen = !this.shouldPriceBeGreen
     }
 }
