@@ -11,11 +11,17 @@ export abstract class Employee {
     work(): void {
 
         console.log(this.tasks[this.currentWorkIndex]);
-        
+
+        this.currentWorkIndex = (this.currentWorkIndex + 1) % this.tasks.length;
+
     }
 
     collectSalary(): void {
+        console.log(`${this.name} received ${this.collectSalary()}`);
+    }
 
+    protected calculateSlary() {
+        return this.salary
     }
 }
 
@@ -37,4 +43,8 @@ export class Menager extends Employee {
         `${this.name} is preparing quarterly report.`,
     ];
     divident: number;
+
+    protected calculateSlary(): number {
+        return this.salary + this.divident
+    }
 }

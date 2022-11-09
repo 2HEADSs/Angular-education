@@ -25,8 +25,13 @@ var Employee = /** @class */ (function () {
     }
     Employee.prototype.work = function () {
         console.log(this.tasks[this.currentWorkIndex]);
+        this.currentWorkIndex = (this.currentWorkIndex + 1) % this.tasks.length;
     };
     Employee.prototype.collectSalary = function () {
+        console.log("".concat(this.name, " received ").concat(this.collectSalary()));
+    };
+    Employee.prototype.calculateSlary = function () {
+        return this.salary;
     };
     return Employee;
 }());
@@ -65,6 +70,9 @@ var Menager = /** @class */ (function (_super) {
         ];
         return _this;
     }
+    Menager.prototype.calculateSlary = function () {
+        return this.salary + this.divident;
+    };
     return Menager;
 }(Employee));
 exports.Menager = Menager;
