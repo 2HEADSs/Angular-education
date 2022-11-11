@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
+import { MyClass } from './app.module';
 
 @Component({
   selector: 'app-root',
@@ -6,6 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
   counter = 0;
   users = [
     {
@@ -15,7 +17,13 @@ export class AppComponent {
       name: 'Pesho'
     },
   ]
-  constructor() {
+  constructor(
+    // @Inject('Test') test: string
+    // @Inject(MyClass) test: MyClass->
+    test: MyClass
+
+  ) {
+    // console.log(test);
 
     // setInterval(() => {
     //   this.counter++;
@@ -25,7 +33,7 @@ export class AppComponent {
   addUserHandler = (nameInput: HTMLInputElement): void => {
     const { value: name } = nameInput;
     // this.users.push({ name })
-    this.users = this.users.concat({name})
+    this.users = this.users.concat({ name })
     nameInput.value = '';
   }
 }

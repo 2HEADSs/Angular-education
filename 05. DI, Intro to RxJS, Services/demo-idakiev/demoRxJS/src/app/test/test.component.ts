@@ -12,7 +12,10 @@ export class TestComponent implements OnInit, OnChanges {
   @Input() users!: { name: string }[];
 
 
-  constructor(private cdRef: ChangeDetectorRef) {
+  constructor(
+
+    private cdRef: ChangeDetectorRef
+  ) {
     this.cdRef.detach()
   }
 
