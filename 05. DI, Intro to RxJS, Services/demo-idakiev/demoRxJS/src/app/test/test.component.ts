@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, OnChanges, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
+import { MyClass } from '../app.module';
 
 @Component({
   selector: 'app-test',
@@ -30,3 +31,4 @@ export class TestComponent implements OnInit, OnChanges {
   }
 
 }
+
