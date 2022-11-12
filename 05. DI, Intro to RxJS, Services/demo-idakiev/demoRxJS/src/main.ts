@@ -52,7 +52,7 @@ const injector = {
     if ((provider as ClassProvider).useClass) {
       let instance = this.instances.get(provider.provide)
       if (instance) { return instance }
-      instance = new (provider as ClassProvider).useClass()
+      instance = new (provider as ClassProvider).useClass(this)
       this.instances.set(provider.provide, instance);
       return instance
     }
