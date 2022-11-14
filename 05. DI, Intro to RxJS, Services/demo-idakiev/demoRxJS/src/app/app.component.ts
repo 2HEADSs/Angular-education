@@ -1,4 +1,4 @@
-import { Component, Inject } from '@angular/core';
+import { Component, Inject, Optional } from '@angular/core';
 import { MyClass } from './app.module';
 
 @Component({
@@ -6,6 +6,7 @@ import { MyClass } from './app.module';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent {
 
   counter = 0;
@@ -16,11 +17,12 @@ export class AppComponent {
     {
       name: 'Pesho'
     },
-  ]
+  ];
+
   constructor(
     // @Inject('Test') test: string
     // @Inject(MyClass) test: MyClass->
-    test: MyClass
+    // test: MyClass
 
   ) {
     // console.log(test);
