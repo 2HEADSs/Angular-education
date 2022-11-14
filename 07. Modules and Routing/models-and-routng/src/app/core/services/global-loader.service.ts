@@ -5,5 +5,13 @@ import { Injectable } from '@angular/core';
 })
 export class GlobalLoaderService {
 
-  constructor() { }
+  title: string | null = 'HELLO';
+
+  showLoader(title: string): void {
+    this.title = title
+  }
+
+  hideLoader() { 
+    this.title = null
+  }
 }
