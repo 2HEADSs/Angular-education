@@ -4,6 +4,7 @@ import { UserListComponent } from './list/list.component';
 import { Test } from '../test';
 import { UserDetailComponent } from './detail/detail.component';
 import { RouterModule } from '@angular/router';
+import { UserResolver } from './user-detail.resolver';
 
 
 
@@ -21,9 +22,9 @@ import { RouterModule } from '@angular/router';
       },
       {
         path: 'user/detail/:id',
+        resolve: {user: UserResolver},
         component: UserDetailComponent
       }
-      ,
     ])
   ],
   providers: [

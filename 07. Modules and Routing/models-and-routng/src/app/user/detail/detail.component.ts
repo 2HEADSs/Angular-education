@@ -11,7 +11,7 @@ export class UserDetailComponent implements OnInit {
   constructor(
     private activatedRoute: ActivatedRoute
   ) {
-console.log(this.activatedRoute.snapshot.paramMap);
+console.log(this.activatedRoute.snapshot.data, this.activatedRoute.snapshot.params);
 this.activatedRoute.params.subscribe(console.log)
   }
 
