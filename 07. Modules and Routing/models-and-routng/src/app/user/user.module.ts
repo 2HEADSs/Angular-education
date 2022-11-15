@@ -5,6 +5,7 @@ import { Test } from '../test';
 import { UserDetailComponent } from './detail/detail.component';
 import { RouterModule } from '@angular/router';
 import { UserResolver } from './user-detail.resolver';
+import { AuthGuard } from './user-detail.guard';
 
 
 
@@ -23,6 +24,7 @@ import { UserResolver } from './user-detail.resolver';
       {
         path: 'user/detail/:id',
         resolve: {user: UserResolver},
+        canActivate: [AuthGuard],
         component: UserDetailComponent
       }
     ])
