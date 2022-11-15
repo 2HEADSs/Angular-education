@@ -8,9 +8,13 @@ import { IUser } from '../shared/interfaces';
 })
 export class UserService {
 
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) { }
 
-  loadUsers(){
+  loadUsers() {
     return this.http.get<IUser[]>('https://jsonplaceholder.typicode.com/users')
+  }
+
+  loadUser(id: number) {
+    return this.http.get<IUser>('https://jsonplaceholder.typicode.com/users' + id)
   }
 }
