@@ -1,22 +1,22 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { UserListComponent } from './list/list.component';
+import { ListComponent } from './list/list.component';
 import { Test } from '../test';
 
 
 
 @NgModule({
   declarations: [
-    UserListComponent
-  ],
-  imports: [
-    CommonModule
+    ListComponent
   ],
   providers: [
     Test //{provide: Test, useClass: Test}
   ],
+  imports: [
+    CommonModule
+  ],
   exports: [
-    UserListComponent
+    ListComponent
   ]
 })
-export class UserModule { }
+export class PostModule { }

@@ -3,6 +3,7 @@ import { GlobalLoaderService } from 'src/app/core/services/global-loader.service
 import { UserService } from '../user.service';
 import { IUser } from '../../shared/interfaces/user';
 import { ThisReceiver } from '@angular/compiler';
+import { Test } from 'src/app/test';
 
 @Component({
   selector: 'app-user-list',
@@ -14,7 +15,10 @@ export class UserListComponent implements OnInit {
   userList: IUser[] | null = null
 
   constructor(private userServie: UserService,
-    private globalLoaderService: GlobalLoaderService) { }
+    private globalLoaderService: GlobalLoaderService,
+    private t: Test) { 
+      (window as any).t2 = t
+    }
 
   ngOnInit(): void {
     this.loadUsers()
