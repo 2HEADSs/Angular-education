@@ -21,8 +21,8 @@ export class UsersComponent {
   constructor() { }
 
 
-  nameHandler() {
-    console.log('CLICKED');
+  nameHandler(event : MouseEvent) {
+    console.log(event.target);
     this.showLastName = !this.showLastName
   }
 
