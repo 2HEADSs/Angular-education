@@ -36,7 +36,7 @@ export class UsersComponent {
   indexOfIser(index: number) {
     if (index === this.slectedUserIndex) {
       this.slectedUserIndex = null;
-      return;
+      return
     }
     this.slectedUserIndex = index;
 

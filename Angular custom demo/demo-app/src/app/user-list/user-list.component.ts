@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-user-list',
@@ -9,7 +9,11 @@ export class UserListComponent {
 
   @Input() singleUser!: { firstName: string, lastName: string }
   @Input() showLastName!: boolean
+
+  @Output() customEvent = new EventEmitter()
   constructor() { }
 
-
+  selectClickHandler() {
+    this.customEvent.emit({ test: 123 })
+  }
 }

@@ -11,5 +11,6 @@
 
 <div *ngFor="let user of users let i = index" class="single-user-container">
     {{i}}
-    <app-user-list [singleUser]="user" [showLastName]="showLastName" (click)="indexOfIser(i)"></app-user-list>
+    <app-user-list [singleUser]="user" [showLastName]="showLastName" 
+    (click)="indexOfIser(i)" (customEvent)="customEventHandler()"></app-user-list>
 </div>
