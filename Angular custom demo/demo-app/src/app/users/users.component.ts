@@ -22,7 +22,6 @@ export class UsersComponent {
 
 
   nameHandler(event : MouseEvent) {
-    console.log(event.target);
     this.showLastName = !this.showLastName
   }
 

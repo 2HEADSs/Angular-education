@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-user-list',
@@ -7,8 +7,8 @@ import { Component } from '@angular/core';
 })
 export class UserListComponent {
 
-  user!: { firstName: string, lastName: string }
-  showLastName!: boolean
+  @Input() singleUser!: { firstName: string, lastName: string }
+  @Input() showLastName!: boolean
   constructor() { }
 
 

@@ -4,5 +4,5 @@
         <ng-container *ngIf="!showLastName"> Show</ng-container>
     </button>
     <div *ngFor="let user of users" class="single-user-container">
-        <app-user-list></app-user-list>
+        <app-user-list [singleUser]="user" [showLastName]="showLastName"></app-user-list>
     </div>
