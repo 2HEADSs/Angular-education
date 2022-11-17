@@ -1,6 +1,10 @@
 
-<span>
-    <span> {{singleUser.firstName}}</span>
-    <span *ngIf="showLastName"> {{singleUser.lastName}}</span>
-    <button (click)="selectClickHandler()">Select</button>
-</span>
+<div>
+    DIV FROM USER-LIST  
+    <span>
+        <span> {{singleUser.firstName}}</span>
+        <span *ngIf="showLastName"> {{singleUser.lastName}}</span>
+    </span>
+    <button (click)="selectClickHandler($event)">Select2</button>
+
+</div>

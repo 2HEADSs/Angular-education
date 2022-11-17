@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ICustomEvent } from '../user-list/user-list.component';
 
 @Component({
   selector: 'app-users',
@@ -36,10 +37,15 @@ export class UsersComponent {
   indexOfIser(index: number) {
     if (index === this.slectedUserIndex) {
       this.slectedUserIndex = null;
-      return
+      return;
     }
     this.slectedUserIndex = index;
 
+  }
+
+  customEventHandler($event: ICustomEvent){
+    console.log($event);
+    
   }
 
 

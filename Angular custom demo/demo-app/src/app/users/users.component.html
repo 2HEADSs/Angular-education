@@ -9,8 +9,8 @@
     Selected index = {{slectedUserIndex}}
 </div>
 
-<div *ngFor="let user of users let i = index" class="single-user-container">
-    {{i}}
-    <app-user-list [singleUser]="user" [showLastName]="showLastName" 
-    (click)="indexOfIser(i)" (customEvent)="customEventHandler()"></app-user-list>
+<div *ngFor="let user of users let i = index" class="single-user-container" >
+    DIV FROM USER
+    <app-user-list [singleUser]="user" [showLastName]="showLastName" (click)="indexOfIser(i)"
+        (customEvent)="customEventHandler($event)"></app-user-list>
 </div>
