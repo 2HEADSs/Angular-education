@@ -5,6 +5,11 @@
     </button>
 </div>
 
-<div *ngFor="let user of users" class="single-user-container">
-    <app-user-list [singleUser]="user" [showLastName]="showLastName"></app-user-list>
+<div *ngIf="showSelectedIndex">
+    Selected index = {{slectedUserIndex}}
+</div>
+
+<div *ngFor="let user of users let i = index" class="single-user-container">
+    {{i}}
+    <app-user-list [singleUser]="user" [showLastName]="showLastName" (click)="indexOfIser(i)"></app-user-list>
 </div>

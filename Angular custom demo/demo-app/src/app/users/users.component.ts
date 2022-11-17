@@ -16,13 +16,30 @@ export class UsersComponent {
       lastName: 'Petrov'
     }
   ];
+  slectedUserIndex: null | number = null;
+
 
   showLastName: boolean = true;
   constructor() { }
 
+  get showSelectedIndex(): boolean {
+    return (this.slectedUserIndex === null ? -1 : this.slectedUserIndex) >= 0
+  }
 
-  nameHandler(event : MouseEvent) {
+  nameHandler(event: MouseEvent) {
     this.showLastName = !this.showLastName
+  }
+
+
+
+
+  indexOfIser(index: number) {
+    if (index === this.slectedUserIndex) {
+      this.slectedUserIndex = null;
+      return;
+    }
+    this.slectedUserIndex = index;
+
   }
 
 
