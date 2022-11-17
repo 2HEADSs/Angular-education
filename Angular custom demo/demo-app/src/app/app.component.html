@@ -1,2 +1,5 @@
-<h1>Demo App Component Header</h1>
+<h1 id="title">{{title}}</h1>
+
+<input #titleInput type="text">
+<button (click)="changeTitle(titleInput.value)">Change Title</button>
 <app-users></app-users>
