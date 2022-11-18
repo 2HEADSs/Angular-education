@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 export interface ICustomEvent {
   test: number
@@ -9,16 +9,28 @@ export interface ICustomEvent {
   templateUrl: './user-list.component.html',
   styleUrls: ['./user-list.component.scss']
 })
-export class UserListComponent {
+export class UserListComponent implements OnInit {
 
   @Input() singleUser!: { firstName: string, lastName: string }
   @Input() showLastName!: boolean
 
   @Output() customEvent = new EventEmitter<ICustomEvent>()
-  constructor() { }
+  constructor() {
+    console.log(this.singleUser);
+    
+  }
+  
+  ngOnInit() {
+    console.log(this.singleUser);
+    
+  }
+  
+  
 
   selectClickHandler($event: MouseEvent) {
     $event.stopPropagation()
     this.customEvent.emit({ test: 123 })
   }
+
+
 }
