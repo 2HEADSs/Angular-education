@@ -18,7 +18,6 @@ export class ThemeListComponent implements OnInit {
     this.apiService.loadThemes().subscribe({
       next: (value) => {
         this.themeList = value;
-
       },
       error: (err) => {
         console.error(err)
