@@ -14,10 +14,10 @@ export class ApiService {
   }
 
   loadThemes() {
-    return this.httpClient.get<ITheme>(`${apiUrl}/themes`)
+    return this.httpClient.get<ITheme[]>(`${apiUrl}/themes`)
   }
 
   loadPosts(limit?: number) {
-    return this.httpClient.get<IPost>(`${apiUrl}/posts${limit ? `?limit=${limit}` : ''}`)
+    return this.httpClient.get<IPost[]>(`${apiUrl}/posts${limit ? `?limit=${limit}` : ''}`)
   }
 }

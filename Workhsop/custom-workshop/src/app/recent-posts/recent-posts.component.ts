@@ -9,13 +9,14 @@ import { IPost } from '../../app/interfaces/post';
 })
 export class RecentPostsComponent implements OnInit {
 
-  postList: IPost[] | null = null
+  posts: IPost[] | null = null 
   constructor(private apiServie: ApiService) { }
 
   ngOnInit(): void {
     this.apiServie.loadPosts(5).subscribe({
       next: (value) => {
-        console.log(value);
+        this.posts = value;
+
       },
       error: (err) => {
         console.error(err)

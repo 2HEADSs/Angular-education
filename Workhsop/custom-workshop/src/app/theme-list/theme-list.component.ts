@@ -9,14 +9,16 @@ import { ITheme } from '../interfaces/theme';
   styleUrls: ['./theme-list.component.scss']
 })
 export class ThemeListComponent implements OnInit {
-  themeList: ITheme[] | null = null
+  
+  themeList: ITheme[] | null = null 
 
-  constructor(private apiServie: ApiService) { }
+  constructor(private apiService: ApiService) { }
 
   ngOnInit(): void {
-    this.apiServie.loadThemes().subscribe({
+    this.apiService.loadThemes().subscribe({
       next: (value) => {
-        console.log(value);
+        this.themeList = value;
+
       },
       error: (err) => {
         console.error(err)
