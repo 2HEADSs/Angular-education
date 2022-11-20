@@ -10,6 +10,7 @@ import { IPost } from '../../app/interfaces/post';
 export class RecentPostsComponent implements OnInit {
 
   posts: IPost[] | null = null
+  errorFetching = false
   constructor(private apiServie: ApiService) { }
 
   ngOnInit(): void {
@@ -18,6 +19,7 @@ export class RecentPostsComponent implements OnInit {
         this.posts = value;
       },
       error: (err) => {
+        this.errorFetching = true;
         console.error(err)
       }
     })

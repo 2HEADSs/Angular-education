@@ -9,8 +9,9 @@ import { ITheme } from '../interfaces/theme';
   styleUrls: ['./theme-list.component.scss']
 })
 export class ThemeListComponent implements OnInit {
-  
-  themeList: ITheme[] | null = null 
+
+  themeList: ITheme[] | null = null
+  errorFetching = false
 
   constructor(private apiService: ApiService) { }
 
@@ -20,7 +21,9 @@ export class ThemeListComponent implements OnInit {
         this.themeList = value;
       },
       error: (err) => {
-        console.error(err)
+        console.error(err);
+        this.errorFetching = true;
+
       }
     })
   }

@@ -1,5 +1,5 @@
-
-    <app-loader *ngIf="!posts"></app-loader>
+<div *ngIf="errorFetching"> Error fetching data!!!</div>
+<app-loader *ngIf="!posts"></app-loader>
 <aside>
     <div class="aside">
         <h2 class="title">
