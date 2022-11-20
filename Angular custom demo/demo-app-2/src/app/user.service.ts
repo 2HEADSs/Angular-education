@@ -12,6 +12,6 @@ export class UserService {
 
   loadUser(search: string = '') {
     const query = search ? `?email_like=${search}` : ''
-    return this.http.get(`https://jsonplaceholder.typicode.com/users${query}`)
+    return this.http.get<IUser[]>(`https://jsonplaceholder.typicode.com/users${query}`)
   }
 }

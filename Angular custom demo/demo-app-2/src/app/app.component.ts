@@ -17,7 +17,7 @@ export class AppComponent implements OnInit {
     this.userService.loadUser().subscribe(data => {
       console.log(data)
       console.log('-------------');
-      
+      this.users = data
 
     })
     // this.userService.loadUser().subscribe(data => this.users = data)
