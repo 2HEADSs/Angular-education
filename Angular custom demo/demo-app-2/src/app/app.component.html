@@ -2,7 +2,9 @@
 <label for="text">Some info</label>
 <input type="text">
 
-<p *ngFor="let user of users">asdsadasasdssadadas</p>
+{{users | json}}
+
+<p *ngFor="let user of users">{{user | json}}</p>
 
 
 <div>

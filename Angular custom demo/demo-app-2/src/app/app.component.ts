@@ -14,10 +14,15 @@ export class AppComponent implements OnInit {
   constructor(public userService: UserService) { }
 
   ngOnInit(): void {
-    this.userService.loadUser().subscribe(console.log)
-    this.userService.loadUser().subscribe(users => this.users = users)
-  
-    
+    this.userService.loadUser().subscribe(data => {
+      console.log(data)
+      console.log('-------------');
+      
+
+    })
+    // this.userService.loadUser().subscribe(data => this.users = data)
+
+
   }
 
 
