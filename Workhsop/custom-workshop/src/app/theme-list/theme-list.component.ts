@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
+import { ITheme } from '../interfaces/theme';
 
 
 @Component({
@@ -8,6 +9,7 @@ import { ApiService } from '../api.service';
   styleUrls: ['./theme-list.component.scss']
 })
 export class ThemeListComponent implements OnInit {
+  themeList: ITheme[] | null = null
 
   constructor(private apiServie: ApiService) { }
 
