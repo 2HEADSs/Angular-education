@@ -9,12 +9,15 @@ import { AuthRoutingModule } from './auth-routing.module';
 @NgModule({
   declarations: [
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
   ],
   imports: [
     CommonModule,
     AuthRoutingModule
-
+  ],
+  exports: [
+    LoginComponent,
+    RegisterComponent,
   ]
 })
 export class AuthModule { }
