@@ -21,7 +21,6 @@ export class RecentPostsComponent implements OnInit {
       next: (value) => {
         this.posts = value;
 
-
       },
       error: (err) => {
         this.errorFetcingData = true;

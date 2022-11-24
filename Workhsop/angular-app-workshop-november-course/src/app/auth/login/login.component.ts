@@ -10,12 +10,12 @@ import { AuthService } from '../auth.service';
 export class LoginComponent {
 
   constructor(private router: Router, private authService: AuthService) {
-    this.authService.user = {
-      username: 'John',
-      lastName: 'Doe'
-    } as any ;
+    // this.authService.user = {
+    //   username: 'John',
+    //   lastName: 'Doe'
+    // } as any ;
 
-    this.router.navigate(['/'])
+    // this.router.navigate(['/'])
   }
 
 
