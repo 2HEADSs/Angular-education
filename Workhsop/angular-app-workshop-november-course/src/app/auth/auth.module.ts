@@ -4,6 +4,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { AuthRoutingModule } from './auth-routing.module';
 import { LogoutComponent } from './logout/logout.component';
+import { ProfileComponent } from './profile/profile.component';
 
 
 
@@ -12,6 +13,7 @@ import { LogoutComponent } from './logout/logout.component';
     LoginComponent,
     RegisterComponent,
     LogoutComponent,
+    ProfileComponent,
   ],
   imports: [
     CommonModule,
