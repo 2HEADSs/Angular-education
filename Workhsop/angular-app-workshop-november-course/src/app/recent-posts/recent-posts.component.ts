@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
-import { IPost } from '../interfaces/posts';
+import { IPost } from '../shared/interfaces';
 
 @Component({
   selector: 'app-recent-posts',
@@ -20,7 +20,6 @@ export class RecentPostsComponent implements OnInit {
     this.apiService.loadPosts(5).subscribe({
       next: (value) => {
         this.posts = value;
-        console.log(this.posts);
 
 
       },

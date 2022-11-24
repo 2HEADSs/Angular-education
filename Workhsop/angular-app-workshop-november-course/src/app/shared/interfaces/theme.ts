@@ -1,4 +1,4 @@
-import { IUser } from "./user";
+import { IUser } from "../interfaces/user";
 
 export interface ITheme {
     themeName: string,

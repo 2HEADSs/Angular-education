@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
-import { ITheme } from '../interfaces/theme';
+import { ITheme } from '../shared/interfaces/theme';
 
 @Component({
   selector: 'app-theme-list',
@@ -20,6 +20,8 @@ export class ThemeListComponent implements OnInit {
       next: (value) => {
         
         this.themeList = value;
+        console.log(value);
+        
       },
       error: (err) => {
   

@@ -11,9 +11,9 @@ export class LoginComponent {
 
   constructor(private router: Router, private authService: AuthService) {
     this.authService.user = {
-      firstName: 'John',
+      username: 'John',
       lastName: 'Doe'
-    };
+    } as any ;
 
     this.router.navigate(['/'])
   }
