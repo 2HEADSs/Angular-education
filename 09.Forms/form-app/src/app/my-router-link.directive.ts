@@ -1,10 +1,15 @@
-import { Directive } from '@angular/core';
+import { Directive, ElementRef } from '@angular/core';
 
 @Directive({
   selector: '[appMyRouterLink]'
 })
 export class MyRouterLinkDirective {
 
-  constructor() { }
+  constructor(
+    private elementRef: ElementRef
+  ) { 
+    console.log(elementRef);
+    
+  }
 
 }
