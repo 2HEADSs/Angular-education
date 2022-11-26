@@ -17,8 +17,7 @@ import { MaxCountDirective } from './max-count.directive';
     LoginComponent,
     HomeComponent,
     RegisterComponent,
-    MaxCountDirective,
-  //for template drivven forms
+    MaxCountDirective
   ],
   imports: [
     BrowserModule,

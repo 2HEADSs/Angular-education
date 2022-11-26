@@ -11,9 +11,9 @@
     </div>
     <div class="form-group">
         <label for="password">Email</label>
-        <input id="password" type="text" name="password" ngModel>
+        <input id="password" type="text" name="password" ngModel [appMaxCount]="5">
     </div>
     <button>Login</button>
 </form>
 
-{{loginForm.value | json}}
+<!-- {{loginForm | json}} -->

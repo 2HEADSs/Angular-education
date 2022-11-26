@@ -1,4 +1,4 @@
-import { MaxCountDirective } from './max-count.directive';
+import { MaxCountDirective } from "./MaxCountDirective";
 
 describe('MaxCountDirective', () => {
   it('should create an instance', () => {
