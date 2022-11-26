@@ -7,7 +7,7 @@ import { MyRouterLinkDirective } from './my-router-link.directive';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaxCountDirective } from './max-count.directive';
 
 @NgModule({
@@ -22,7 +22,8 @@ import { MaxCountDirective } from './max-count.directive';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule //for template drivven forms
+    FormsModule, //for template drivven forms
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

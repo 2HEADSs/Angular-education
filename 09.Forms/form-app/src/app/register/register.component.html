@@ -1,1 +1,21 @@
 <p>register works!</p>
+
+
+<form [formGroup]="registerForm"  (ngSubmit)="handleFormSubmit()">
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input id="email" type="text" name="email" formControlName="email" >
+        <!-- <ng-container *ngIf="emailInput.touched">
+            <div *ngIf="emailInput?.errors?.['required']">Email is required</div>
+            <div *ngIf="emailInput?.errors?.['email']">Invalid email</div>
+        </ng-container> -->
+    </div>
+    <div class="form-group">
+        <label for="password">Email</label>
+        <input id="password" type="text" name="password" formControlName="password" >
+        <!-- <div *ngIf="passwordInput?.errors?.['appMaxCount']">Password is longer than {{emailInput?.errors?.['appMaxCount']}}</div> -->
+    </div>
+    <button>Login</button>
+</form>
+
+{{registerForm | json}}
