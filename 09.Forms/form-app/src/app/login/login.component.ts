@@ -8,7 +8,7 @@ import { NgForm } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
 
-  email: string = 'banana in the box text'
+  emailSet: string = 'banana@inthe.box.text'
 
   constructor() { }
 

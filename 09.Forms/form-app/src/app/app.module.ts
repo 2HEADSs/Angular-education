@@ -8,6 +8,7 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { FormsModule } from '@angular/forms';
+import { MaxCountDirective } from './max-count.directive';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { FormsModule } from '@angular/forms';
     LoginComponent,
     HomeComponent,
     RegisterComponent,
+    MaxCountDirective,
   //for template drivven forms
   ],
   imports: [
