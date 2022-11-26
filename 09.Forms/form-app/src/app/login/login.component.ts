@@ -6,12 +6,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
- 
-  email
+
+  email: string = 'banana in the box text'
 
   constructor() { }
 
   ngOnInit(): void {
   }
+
+  handleFormSubmit(value: { email: string; password: string }): void {
+    console.log(value);
+    
+  }
+
 
 }
