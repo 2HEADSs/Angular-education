@@ -1,6 +1,6 @@
 <p>login works!</p>
 
-<form #loginForm="ngForm" (ngSubmit)="handleFormSubmit(loginForm.value)">
+<form #loginForm="ngForm" (ngSubmit)="handleFormSubmit(loginForm)">
     <div class="form-group">
         <label for="email">Email</label>
         <input id="email" type="text" name="email" [(ngModel)]="email">
