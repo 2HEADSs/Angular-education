@@ -15,9 +15,9 @@ const routes: Routes = [
             },
             {
                 path: 'new',
-                resolve: {
-                    theme: ThemeResolver
-                },
+                // resolve: {
+                //     theme: ThemeResolver
+                // },
                 component: NewThemeComponent
             },
             {
