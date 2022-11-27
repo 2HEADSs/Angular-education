@@ -8,9 +8,15 @@
             <label for="username"><span><i class="fas fa-user"></i></span></label>
             <input class="input-error" type="text" formControlName="username" id="username" placeholder="Johny">
         </p>
-        <p *ngIf="form.get('username')?.touched && form.get('username')?.errors?.['required']" class="error">
-            Username is required!
-        </p>
+        <ng-container *ngIf="form.get('username')?.touched">
+            <p *ngIf="form.get('username')?.errors?.['required']" class="error">
+                Username is required!
+            </p>
+            <p *ngIf="form.get('username')?.errors?.['minlength']" class="error">
+                Username should be longer then 5 characters!
+            </p>
+        </ng-container>
+
 
         <!-- email -->
         <p class="field field-icon">
