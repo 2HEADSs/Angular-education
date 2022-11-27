@@ -45,12 +45,12 @@
             </p>
 
             <ng-container *ngIf="form.get('pass')?.get('pasword')?.touched">
-            <p class="error" *ngIf="form.get('pass')?.get('password')?.errors?.['required']">
-                Password is required!
-            </p>
-            <p class="error" *ngIf="form.get('pass')?.get('password')?.errors?.['minlength']">
-                Password must be at least 5 characters!
-            </p>
+                <p class="error" *ngIf="form.get('pass')?.get('password')?.errors?.['required']">
+                    Password is required!
+                </p>
+                <p class="error" *ngIf="form.get('pass')?.get('password')?.errors?.['minlength']">
+                    Password must be at least 5 characters!
+                </p>
             </ng-container>
 
 
