@@ -9,7 +9,9 @@ import { AuthService } from '../auth.service';
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.scss']
 })
-export class ProfileComponent implements OnInit {
+export class ProfileComponent{
+
+  showEditMode = false;
 
   get user() {
     const { username, email, tel: telephone } = this.authService.user!;
@@ -29,9 +31,18 @@ export class ProfileComponent implements OnInit {
     tel: [''],
   })
 
-  constructor(private fb: FormBuilder, private authService: AuthService) { }
+  constructor(private fb: FormBuilder, private authService: AuthService) { 
+    this.form.setValue(this.user)
+  }
 
-  ngOnInit(): void {
+  toggleEditMode():void{
+    this.showEditMode = !this.showEditMode
+  }
+
+  saveProfile(): void{
+    if(this.form.invalid){return}
+    console.log(this.form.value);
+    
   }
 
 }

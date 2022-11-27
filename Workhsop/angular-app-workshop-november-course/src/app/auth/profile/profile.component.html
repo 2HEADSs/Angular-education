@@ -1,16 +1,45 @@
-<div class="profile"><img src="/assets/profile.png" alt="default user">
-    <h3>User Info:</h3>
-    <div class="flex">
-        <p>Username: </p>
-        <p>{{user.username}}</p>
-    </div>
-    <div class="flex">
-        <p>Email: </p>
-        <p>{{user.email}}</p>
-    </div>
-    <div class="flex">
-        <p>Phone: </p>
-        <p>{{user.ext}} {{user.tel}}</p>
-    </div>
-    <button class="edit-button">Edit</button>
+<div class="profile">
+    <form [formGroup]="form" (ngSubmit)="saveProfile()">
+        <img src="/assets/profile.png" alt="default user">
+        <h3>User Info:</h3>
+        <div class="flex">
+            <p>Username: </p>
+            <p>
+                <input *ngIf="showEditMode" type="text" formControlName="username">
+                <ng-container *ngIf="!showEditMode">
+                    {{user.username}}
+                </ng-container>
+            </p>
+        </div>
+        <div class="flex">
+            <p>Email: </p>
+            <p>
+                <input *ngIf="showEditMode" type="text" formControlName="email">
+                <ng-container *ngIf="!showEditMode">
+                    {{user.email}}
+                </ng-container>
+            </p>
+        </div>
+        <div class="flex">
+            <p>Phone: </p>
+            <p>
+                <ng-container *ngIf="showEditMode">
+                    <label for="tel"><span><i class="fas fa-phone"></i></span></label>
+                    <select name="select-tel" id="select-tel" class="tel" formControlName="ext">
+                        <option value="00359">+359</option>
+                        <option value="00358">+358</option>
+                    </select>
+                    <input type="text" formControlName="tel" id="tel" placeholder="885 888 888">
+                </ng-container>
+                <ng-container *ngIf="!showEditMode">
+                    {{user.ext}} {{user.tel}}
+                </ng-container>
+            </p>
+        </div>
+        <button class="edit-button" (click)="showEditMode? undefined : toggleEditMode()"
+            [type]=" showEditMode? 'submit' :'button' ">
+            <ng-container *ngIf="showEditMode">Save</ng-container>
+            <ng-container *ngIf="!showEditMode">Edit</ng-container>
+        </button>
+    </form>
 </div>
