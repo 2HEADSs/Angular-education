@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'demo-app';
+  obj = {
+    prop1: {
+      prop2: 'HELLO WORLD'
+      }
+  }
 }
