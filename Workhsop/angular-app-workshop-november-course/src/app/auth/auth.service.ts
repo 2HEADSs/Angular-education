@@ -48,7 +48,7 @@ export class AuthService implements OnDestroy {
         tap(user => this.user$$.next(user)),
         catchError((err) => { 
           this.user$$.next(null);
-          return of(err);
+          return of(err); //[off(errors)]
         })
       );
   }
