@@ -17,6 +17,7 @@ export class LoginComponent {
     NgForm,
     { static: true }
   ) form!: ElementRef<HTMLInputElement>;
+  
   constructor(private activatedRoute: ActivatedRoute, private router: Router, private authService: AuthService) {
 
   }
@@ -26,9 +27,6 @@ export class LoginComponent {
     const { email, password } = form.value;
     this.authService.login(email!, password!)
       .subscribe(user => {
-        console.log(user);
-
-        this.authService.user = user;
         this.router.navigate(['/theme/recent'])
       });
 

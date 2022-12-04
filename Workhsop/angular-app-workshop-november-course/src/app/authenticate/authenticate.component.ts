@@ -17,11 +17,9 @@ export class AuthenticateComponent implements OnInit {
   ngOnInit(): void {
     this.authService.getProfile().subscribe({
       next: (user) => {
-        this.authService.user = user;
         this.isAuthenticated = false;
       },
       error: () => {
-        this.authService.user = null;
         this.isAuthenticated = false;
       }
     })
