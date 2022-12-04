@@ -1,8 +1,9 @@
 import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { Inject, Injectable, Provider } from "@angular/core";
 import { Router } from "@angular/router";
-import { BehaviorSubject, catchError, Observable } from "rxjs";
+import { BehaviorSubject, catchError, Observable, of, switchMap, throwError, withLatestFrom } from "rxjs";
 import { environment } from '../environments/environment'
+import { AuthService } from "./auth/auth.service";
 import { API_ERROR } from "./shared/constants";
 const apiUrl = environment.apiUrl
 
@@ -11,18 +12,32 @@ export class AppInterceptor implements HttpInterceptor {
 
     constructor(
         @Inject(API_ERROR) private apiError: BehaviorSubject<Error | null>,
-        private router: Router
+        private router: Router,
+        private authService: AuthService
     ) { }
 
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         if (req.url.startsWith('/api')) {
             req = req.clone({ url: req.url.replace('/api', apiUrl), withCredentials: true })
         }
-        return next.handle(req).pipe(catchError(err => {
-            this.apiError.next(err);
-            this.router.navigate(['/error'])
-            return [err]
-        }))
+        return next.handle(req).pipe(
+            catchError(err => of(err).pipe(
+                withLatestFrom(this.authService.user$),
+                switchMap(([err, user]) => {
+                    if (err.status === 401) {
+                        if (!user) {
+                            this.router.navigate(['/auth/login']);
+                        } else {
+                            this.router.navigate(['/auth/no-permisions']);
+                        }
+                    } else {
+                        this.apiError.next(err);
+                        this.router.navigate(['/error'])
+                    }
+                    return throwError(() => err)
+                })
+            )
+            ));
     }
 
 }
