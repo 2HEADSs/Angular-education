@@ -1,18 +1,19 @@
 <div class="profile">
     <form [formGroup]="form" (ngSubmit)="saveProfile()">
         <img src="/assets/profile.png" alt="default user">
+
         <h3>User Info:</h3>
         <div class="flex">
-            <p>Username: </p>
+            <p>Username:</p>
             <p>
                 <ng-container *ngIf="showEditMode">
                     <input type="text" formControlName="username">
-                    <ng-container *ngIf="form.get('username')?.touched" || form.submited>
+                    <ng-container *ngIf="form.get('username')?.touched || formSubmitted">
                         <p *ngIf="form.get('username')?.errors?.['required']" class="error">
                             Username is required!
                         </p>
                         <p *ngIf="form.get('username')?.errors?.['minlength']" class="error">
-                            Username should be longer then 5 characters!
+                            Username should be longer than 5 chars
                         </p>
                     </ng-container>
                 </ng-container>
@@ -26,7 +27,7 @@
             <p>
                 <ng-container *ngIf="showEditMode">
                     <input type="text" formControlName="email">
-                    <ng-container *ngIf="form.get('email')?.touched || formSubmited">
+                    <ng-container *ngIf="form.get('email')?.touched || formSubmitted">
                         <p class="error" *ngIf="form.get('email')?.errors?.['required']">
                             Email is required!
                         </p>
@@ -35,7 +36,6 @@
                         </p>
                     </ng-container>
                 </ng-container>
-
                 <ng-container *ngIf="!showEditMode">
                     {{user.email}}
                 </ng-container>
@@ -57,6 +57,16 @@
                 </ng-container>
             </p>
         </div>
+
+        <!-- <div *ngFor="let address of addresssesArray.controls; let i = index" formArrayName="addresses">
+      <ng-container [formGroup]="$any(address)">
+        <input type="text" formControlName="postCode">
+        <input type="text" formControlName="street">
+      </ng-container>
+      
+      <button (click)="addNewAddress()">+</button>
+    </div> -->
+
         <ng-template #edit>
             <button class="edit-button" type="submit">Save</button>
         </ng-template>

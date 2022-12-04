@@ -8,7 +8,7 @@ import { API_ERROR } from 'src/app/shared/constants';
   templateUrl: './error.component.html',
   styleUrls: ['./error.component.scss']
 })
-export class ErrorComponent implements OnInit, OnDestroy {
+export class ErrorComponent implements OnDestroy {
 
   apiError$ = this.apiError.asObservable()
 
@@ -21,11 +21,8 @@ export class ErrorComponent implements OnInit, OnDestroy {
     })
   }
   ngOnDestroy(): void {
-    throw new Error('Method not implemented.');
-  }
-
-  ngOnInit(): void {
     this.apiError.next(null)
   }
+
 
 }

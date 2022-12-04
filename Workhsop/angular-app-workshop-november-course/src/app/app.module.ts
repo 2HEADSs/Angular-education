@@ -20,8 +20,6 @@ import { BehaviorSubject } from 'rxjs';
     AuthenticateComponent,
   ],
   imports: [
-    AuthModule,
-    ThemeModule,
     AppRoutingModule,
     BrowserModule,
     CoreModule,

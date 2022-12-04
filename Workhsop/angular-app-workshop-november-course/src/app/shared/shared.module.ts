@@ -4,6 +4,7 @@ import { LoaderComponent } from './loader/loader.component';
 import { WelcomeMessageComponent } from './welcome-message/welcome-message.component';
 import { RouterModule } from '@angular/router';
 import { AppEmailDirective } from './validators/app-email.directive';
+import { ShortenPipe } from './shorten.pipe';
 
 
 
@@ -11,7 +12,8 @@ import { AppEmailDirective } from './validators/app-email.directive';
   declarations: [
     LoaderComponent,
     WelcomeMessageComponent,
-    AppEmailDirective
+    AppEmailDirective,
+    ShortenPipe
   ],
   imports: [
     CommonModule,
@@ -20,7 +22,8 @@ import { AppEmailDirective } from './validators/app-email.directive';
   exports: [
     LoaderComponent,
      WelcomeMessageComponent,
-    AppEmailDirective
+    AppEmailDirective,
+    ShortenPipe
     ]
 })
 export class SharedModule { }

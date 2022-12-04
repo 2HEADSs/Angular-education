@@ -46,7 +46,18 @@ export class AuthService implements OnDestroy {
     return this.http.get<IUser>('/api/users/profile')
       .pipe(
         tap(user => this.user$$.next(user)),
-        catchError((err) => { 
+        catchError((err) => {
+          this.user$$.next(null);
+          return of(err); //[off(errors)]
+        })
+      );
+  }
+
+  setProfile(username: string, email: string, tel?: string) {
+    return this.http.put<IUser>('/api/users/profile',{username, email,tel})
+      .pipe(
+        tap(user => this.user$$.next(user)),
+        catchError((err) => {
           this.user$$.next(null);
           return of(err); //[off(errors)]
         })
